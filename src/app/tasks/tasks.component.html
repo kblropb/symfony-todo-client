@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-12">Tasks:&nbsp;
+    <div class="row forms mb-5">
+      <div class="col-6">
+
+        <form [formGroup]="addTaskForm" action="" (submit)="addTask()">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Add task">
+          </div>
+        </form>
+      </div>
+      <div class="col-6">
+        <form action="">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="task" *ngFor="let task of tasks" [class.done]="task.is_done">
+        <td>{{ task.id }}</td>
+        <td>{{ task.name }}</td>
+        <td class="actions"><i class="fa fa-eye" aria-hidden="true"></i>
+          <button (click)="done(task)" [attr.disabled]="task.is_done" class="btn btn-outline-success">
+            <fa-icon [icon]="faCheck"></fa-icon>
+          </button>&nbsp;
+          <button (click)="delete(task)" type="button" class="btn btn-outline-danger">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
