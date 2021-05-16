@@ -2,7 +2,6 @@
   <div class="col-12">Tasks:&nbsp;
     <div class="row forms mb-5">
       <div class="col-6">
-
         <form [formGroup]="addTaskForm" (submit)="addTask()" name="addTaskForm">
           <div class="form-group">
             <input formControlName="name" type="text" class="form-control" placeholder="Add task">
@@ -39,7 +38,6 @@
           <button (click)="delete(task)" type="button" class="btn btn-outline-danger">
             <fa-icon [icon]="faTrash"></fa-icon>
           </button>
-
         </td>
       </tr>
       </tbody>
