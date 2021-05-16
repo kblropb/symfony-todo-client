@@ -15,7 +15,6 @@ export class TasksComponent implements OnInit {
   errorMessage: string;
 
   addTaskForm = this.formBuilder.group({
-    todoId: 1,
     name: ''
   });
 
@@ -71,7 +70,7 @@ export class TasksComponent implements OnInit {
 
   addTask() {
     return this.taskService
-      .addTask(this.addTaskForm.value)
+      .addTask(1, this.addTaskForm.value)
       .subscribe(
         task => {
           this.tasks.push(task);
