@@ -30,7 +30,6 @@
       <tr class="task" *ngFor="let task of tasks" [class.done]="task.is_done">
         <td>{{ task.id }}</td>
         <td>{{ task.name }}</td>
-        <td>{{task.is_done }}</td>
         <td class="actions"><i class="fa fa-eye" aria-hidden="true"></i>
           <button (click)="done(task)" [disabled]="task.is_done" class="btn btn-outline-success">
             <fa-icon [icon]="faCheck"></fa-icon>
