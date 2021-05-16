@@ -50,8 +50,8 @@ export class TaskService {
       )
   }
 
-  addTask(body: any): Observable<Task> {
-    return this.http.post(API_URL + '/todos/' + body.todoId + '/tasks', body, options)
+  addTask(todoId: number, body: any): Observable<Task> {
+    return this.http.post(API_URL + '/todos/' + todoId + '/tasks', body, options)
       .pipe(
         map(res => res as Task || [])
       )

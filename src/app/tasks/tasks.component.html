@@ -3,9 +3,9 @@
     <div class="row forms mb-5">
       <div class="col-6">
 
-        <form [formGroup]="addTaskForm" action="" (submit)="addTask()">
+        <form [formGroup]="addTaskForm" (submit)="addTask()" name="addTaskForm">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Add task">
+            <input formControlName="name" type="text" class="form-control" placeholder="Add task">
           </div>
         </form>
       </div>
@@ -32,7 +32,7 @@
         <td>{{ task.id }}</td>
         <td>{{ task.name }}</td>
         <td class="actions"><i class="fa fa-eye" aria-hidden="true"></i>
-          <button (click)="done(task)" [attr.disabled]="task.is_done" class="btn btn-outline-success">
+          <button (click)="done(task)" [disabled]="task.is_done" class="btn btn-outline-success">
             <fa-icon [icon]="faCheck"></fa-icon>
           </button>&nbsp;
           <button (click)="delete(task)" type="button" class="btn btn-outline-danger">

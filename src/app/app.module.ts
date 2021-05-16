@@ -9,7 +9,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 import {RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {FormsModule, FormGroup} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -30,7 +30,8 @@ const routes = [
     FontAwesomeModule,
     RouterModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
