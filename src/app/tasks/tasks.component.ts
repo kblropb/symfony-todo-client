@@ -18,6 +18,10 @@ export class TasksComponent implements OnInit {
     name: ''
   });
 
+  searchForm = this.formBuilder.group({
+    name: ''
+  });
+
   constructor(
     private taskService: TaskService,
     private formBuilder: FormBuilder
@@ -76,6 +80,15 @@ export class TasksComponent implements OnInit {
           this.tasks.push(task);
           this.addTaskForm.reset();
         },
+        error => this.errorMessage = <any>error
+      );
+  }
+
+  search() {
+    return this.taskService
+      .search(this.searchForm.value)
+      .subscribe(
+        tasks => this.tasks = tasks,
         error => this.errorMessage = <any>error
       );
   }

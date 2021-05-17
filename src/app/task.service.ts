@@ -56,4 +56,12 @@ export class TaskService {
         map(res => res as Task || [])
       )
   }
+
+  search(params: any): Observable<Task[]> {
+    const searchParams = new URLSearchParams(params);
+    return this.http.get(API_URL + '/search?' + searchParams, options)
+      .pipe(
+        map(res => res as Task[] || [])
+      )
+  }
 }

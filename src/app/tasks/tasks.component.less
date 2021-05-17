@@ -1,8 +1,37 @@
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tasks-head {
+  padding: 10px;
+
+  > div {
+    .flex-center;
+
+    &.name {
+      justify-content: flex-start;
+    }
+  }
+}
+
 .task {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+
   &.done {
-    td:not(.actions) {
+    :not(.actions) {
       color: #777;
       text-decoration: line-through;
+    }
+  }
+
+  > div {
+    .flex-center;
+
+    &.name {
+      justify-content: flex-start;
     }
   }
 }

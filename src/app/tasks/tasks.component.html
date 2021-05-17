@@ -1,22 +1,23 @@
 <div class="row">
-  <div class="row forms mb-5">
-    <div class="col-6">
-      <form [formGroup]="addTaskForm" (submit)="addTask()" name="addTaskForm">
-        <div class="form-group">
-          <input formControlName="name" type="text" class="form-control" placeholder="Add task">
-        </div>
-      </form>
+  <div class="col-12 col-md-8 tasks">
+    <div class="forms row">
+      <div class="col-6">
+        <form [formGroup]="addTaskForm" (submit)="addTask()" name="addTaskForm">
+          <div class="form-group">
+            <input formControlName="name" type="text" class="form-control" placeholder="Add task">
+          </div>
+        </form>
+      </div>
+      <div class="col-6">
+        <form [formGroup]="searchForm" (submit)="search()" name="searchForm">
+          <div class="form-group">
+            <input formControlName="name" type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="col-6">
-      <form action="">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="col-12 col-md-8 offset-md-2 tasks">Tasks:&nbsp;
     <div class="tasks-head row">
+      <div class="col-12 pt-2 pb-2 justify-content-start">Tasks:&nbsp;</div>
       <div class="col-1 id">ID</div>
       <div class="col-9 name">Name</div>
       <div class="col-2 actions">Actions</div>
