@@ -1,2 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  min-width: 320px;
+}
+
+.tasks-head {
+  padding: 10px;
+
+  > div {
+    .flex-center;
+
+    &.name {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.task {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+
+  > div {
+    .flex-center;
+
+    &.name {
+      justify-content: flex-start;
+    }
+  }
+}
