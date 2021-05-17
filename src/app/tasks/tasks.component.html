@@ -1,17 +1,19 @@
 <div class="row">
   <div class="col-12 col-md-8 tasks">
     <div class="forms row">
-      <div class="col-6">
+      <div class="col-12 col-sm-6">
         <form [formGroup]="addTaskForm" (submit)="addTask()" name="addTaskForm">
-          <div class="form-group">
+          <div class="input-group mb-3">
             <input formControlName="name" type="text" class="form-control" placeholder="Add task">
+            <button type="submit" class="btn btn-success">Button</button>
           </div>
         </form>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-sm-6">
         <form [formGroup]="searchForm" (submit)="search()" name="searchForm">
-          <div class="form-group">
+          <div class="input-group mb-3">
             <input formControlName="name" type="text" class="form-control" placeholder="Search">
+            <button type="submit" class="btn btn-primary">Button</button>
           </div>
         </form>
       </div>
@@ -19,17 +21,17 @@
     <div class="tasks-head row">
       <div class="col-12 pt-2 pb-2 justify-content-start">Tasks:&nbsp;</div>
       <div class="col-1 id">ID</div>
-      <div class="col-9 name">Name</div>
-      <div class="col-2 actions">Actions</div>
+      <div class="col-7 col-sm-9 name">Name</div>
+      <div class="col-4 col-sm-2 actions">Actions</div>
     </div>
     <div class="task row" *ngFor="let task of tasks" [class.done]="task.is_done">
       <div class="col-1 id">{{task.id}}</div>
-      <div class="col-9 name">{{task.name}}</div>
-      <div class="col-2 actions">
+      <div class="col-7 col-sm-9 name">{{task.name}}</div>
+      <div class="col-4 col-sm-2 actions">
         <button (click)="done(task)" [disabled]="task.is_done" class="btn btn-outline-success">
           <fa-icon [icon]="faCheck"></fa-icon>
         </button>&nbsp;
-        <button (click)="delete(task)" type="button" class="btn btn-outline-danger">
+        <button (click)="delete(task)" type="button" class="btn-delete btn btn-outline-danger">
           <fa-icon [icon]="faTrash"></fa-icon>
         </button>
       </div>
